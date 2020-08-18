@@ -1,0 +1,16 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        width: 35%;
+        min-height: 80%;
+        background-color: $c-white;
+        border-radius: $radius;
+        border: $border;
+        padding: 32px 36px
+    }
+}
