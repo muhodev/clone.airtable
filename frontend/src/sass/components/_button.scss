@@ -1,0 +1,21 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 9px 16px;
+    min-width: 88px;
+    font-size: $f-size-subtitle;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 250ms;
+
+    &:hover {
+        background-color: darken($c-primary, 5);
+    }
+
+    &--primary {
+        background-color: $c-primary;
+        color: $c-white;
+    }
+}

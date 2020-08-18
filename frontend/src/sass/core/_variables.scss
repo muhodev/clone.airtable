@@ -1,7 +1,15 @@
 $f-family:'Roboto', sans-serif;
 
+$f-size-subtitle: .875rem;
+
+$c-primary: #0366d6;
 $c-white: #fff;
+$c-border: #dadce0;
+
+$c-text-secondary: #444d56;
 
 $radius: 6px;
 
-$border: 1px solid #dadce0;
+
+
+$border: 1px solid $c-border;
