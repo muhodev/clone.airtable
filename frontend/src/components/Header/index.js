@@ -16,6 +16,10 @@ const HeaderItems = styled.div`
 
 const HeaderItem = styled.div`
     padding: 10px 20px;
+
+    &:last-child {
+        padding-right: 0;
+    }
 `
 
 function Header(props) {
@@ -26,7 +30,8 @@ function Header(props) {
                 <h1>LOGO</h1>
             </HeaderItems>
             <HeaderItems>
-
+                <HeaderItem>Kullanıcılar</HeaderItem>
+                <HeaderItem>Dosyalar</HeaderItem>
                 <HeaderItem>Tahsilatlar</HeaderItem>
                 <HeaderItem>Hedefler</HeaderItem>
                 <HeaderItem><Avatar name="my" /></HeaderItem>
