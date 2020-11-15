@@ -6,6 +6,7 @@ import Flex from '../components/Flex'
 import styled from 'styled-components'
 import "../sass/index.scss"
 import { ReactComponent as FilterIcon } from "../components/Icons/Filter.svg"
+import Calendar from '../components/Calendar'
 
 const FilterButton = styled(Flex)`
     cursor:pointer;
