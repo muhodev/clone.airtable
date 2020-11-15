@@ -1,11 +1,16 @@
 import React from 'react'
-import { Login } from '../pages'
+import { Layout } from '../components'
+import Table from '../components/Table'
 import "../sass/index.scss"
 
 function App(props) {
     return (
         <div id="root">
-            <Login />
+            <Layout>
+
+                <h3>Tahsilatlar</h3>
+                <Table />
+            </Layout>
         </div>
     )
 }

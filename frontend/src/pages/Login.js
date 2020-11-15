@@ -14,7 +14,7 @@ function Login(props) {
                     </Typography>
                     <Input
                         className="mb-3"
-                        label="Kullanıcı adı"
+                        label="Email"
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                     />

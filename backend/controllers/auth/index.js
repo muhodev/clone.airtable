@@ -39,9 +39,10 @@ const createSendToken = (user, statusCode, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
     const newUser = await User.create({
         name: req.body.name,
+        surname: req.body.surname,
         email: req.body.email,
         password: req.body.password,
-        passwordConfirm: req.body.passwordConfirm
+        passwordConfirm: req.body.passwordConfirm,
     });
 
     createSendToken(newUser, 201, res);
@@ -52,13 +53,17 @@ exports.login = catchAsync(async (req, res, next) => {
 
     // 1) Check if email and password exist
     if (!email || !password) {
-        return next(new AppError('Please provide email and password!', 400));
+        return next(new AppError('Lütfen geçerli bir email veya şifre girin', 400));
     }
     // 2) Check if user exists && password is correct
     const user = await User.findOne({ email }).select('+password');
 
-    if (!user || !(await user.correctPassword(password, user.password))) {
-        return next(new AppError('Incorrect email or password', 401));
+    if (!user) {
+        return next(new AppError('Girdiğiniz email hatalı!', 401));
+    }
+
+    if (!(await user.correctPassword(password, user.password))) {
+        return next(new AppError('Gİrdiğiniz şifre hatalı!', 401));
     }
 
     // 3) If everything ok, send token to client
@@ -77,7 +82,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
     if (!token) {
         return next(
-            new AppError('You are not logged in! Please log in to get access.', 401)
+            new AppError('Lütfen sisteme giriş yapınız.', 401)
         );
     }
 
@@ -86,10 +91,11 @@ exports.protect = catchAsync(async (req, res, next) => {
 
     // 3) Check if user still exists
     const currentUser = await User.findById(decoded.id);
+
     if (!currentUser) {
         return next(
             new AppError(
-                'The user belonging to this token does no longer exist.',
+                'Böyle bir kullanıcı bulunamadı.',
                 401
             )
         );
@@ -98,7 +104,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     // 4) Check if user changed password after the token was issued
     if (currentUser.changedPasswordAfter(decoded.iat)) {
         return next(
-            new AppError('User recently changed password! Please log in again.', 401)
+            new AppError('Kullanıcı şifresi henüz yeni değiştirildi. Lütfen tekrar giriş yapınız', 401)
         );
     }
 
@@ -107,12 +113,13 @@ exports.protect = catchAsync(async (req, res, next) => {
     next();
 });
 
+
 exports.restrictTo = (...roles) => {
     return (req, res, next) => {
         // roles ['admin', 'lead-guide']. role='user'
         if (!roles.includes(req.user.role)) {
             return next(
-                new AppError('You do not have permission to perform this action', 403)
+                new AppError('Bu işlemi yapmak için yetkiniz yok.', 403)
             );
         }
 
@@ -124,7 +131,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     // 1) Get user based on POSTed email
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        return next(new AppError('There is no user with email address.', 404));
+        return next(new AppError('Girdiğiniz email adresine ait herhangi bir kullanıcı bulunamadı.', 404));
     }
 
     // 2) Generate the random reset token

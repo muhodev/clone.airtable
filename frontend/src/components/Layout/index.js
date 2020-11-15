@@ -1,13 +1,17 @@
 import React, { Fragment } from "react"
+import { Header } from "../"
+import Container from "../Container"
 
 function Layout(props) {
     return (
         <Fragment>
-            <header></header>
+            <Header />
             <main>
-                {
-                    props.children
-                }
+                <Container>
+                    {
+                        props.children
+                    }
+                </Container>
             </main>
             <footer></footer>
         </Fragment>
