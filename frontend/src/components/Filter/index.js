@@ -47,7 +47,7 @@ const DialogBody = styled.div`
 
     &::-webkit-scrollbar
     {
-        width: 10px;
+        width: 6px;
         background-color: #f2f2f2;
     }
 

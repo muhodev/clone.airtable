@@ -1,17 +1,43 @@
 import styled from 'styled-components'
 
 export const CalendarWrapper = styled.div`
-    width: 210px;
+    padding: 14px 20px;
+    background-color: #fff;
+    display: inline-flex;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+
+
 `
 
-export const CalendarGrid = styled.div`
-    display: grid; 
-    grid-template-columns: repeat(7, 1fr);
-    text-align: right;
+export const CalendarTable = styled.table`
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background-color: #fff;
+
+    th {
+        font-weight: 400;
+        font-size: 14px;
+        color: #777;
+        width: 44px;
+        height: 44px;
+    }
+
+    td {
+            border: 1px solid #d2d2d2;
+            box-sizing: border-box !important;
+            cursor: pointer !important;
+            font-size: 14px !important;
+            text-align: center !important;
+            color: rgb(72, 72, 72);
+            width: 44px;
+        height: 44px;
+    }
+    .selected {
+        color: #fff ;
+        background-color: #8a85ff;
+        border-color: #8a85ff;
+    }
 
 `
 
-export const SelectedDate = styled.div`
-    color: #fff;
-    background-color: blue;
-`

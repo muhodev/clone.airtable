@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import moment from "moment"
-import { CalendarGrid, CalendarWrapper, SelectedDate } from "./styled"
+import { CalendarTable, CalendarWrapper, SelectedDate } from "./styled"
 import buildCalendar from './buildCalendar'
+
+moment.updateLocale('en', {
+    week: {
+        dow: 1,
+    },
+})
 
 function Calendar(props) {
     const [calendar, setCalendar] = useState([])
@@ -26,28 +32,47 @@ function Calendar(props) {
     return (
         <CalendarWrapper>
 
-            {
-                calendar.map((week, weekId) => (
-                    <CalendarGrid key={weekId}>
-                        {
-                            week.map((day, dayId) => (
-                                <div key={dayId} onClick={() => setValue(day)}>
-                                    {
-                                        value.isSame(day, "day") ?
-                                            <SelectedDate>
-                                                {day.format("D").toString()}
-                                            </SelectedDate> :
-                                            <div>
-                                                {day.format("D").toString()}
-                                            </div>
-                                    }
-                                </div>
-                            ))
-                        }
-                    </CalendarGrid>
-                ))
+            <CalendarTable>
 
-            }
+                <thead>
+                    <tr>
+                        {
+                            ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"]
+                                .map((weekDay, weekDayId) => (
+
+                                    <th key={weekDayId}>
+                                        {weekDay}
+                                    </th>
+                                ))
+                        }
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        calendar.map((week, weekId) => (
+                            <tr key={weekId} >
+
+                                {
+                                    week.map((day, dayId) => (
+                                        <td
+                                            onClick={() => setValue(day)}
+                                            className={`${value.isSame(day, 'day') ? 'selected' : ""}`
+                                            }
+                                        >
+                                            {day.format("D").toString()}
+
+
+                                        </td>
+                                    ))
+                                }
+                            </tr>
+                        ))
+
+                    }
+                </tbody>
+
+            </CalendarTable>
 
         </CalendarWrapper>
     )
