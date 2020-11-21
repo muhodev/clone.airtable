@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -8,7 +7,7 @@ const Button = styled.button`
     font-weight: bold;
     cursor: pointer;
 
-    padding: 12px 16px;
+    padding: 10px 12px;
     border-radius: 4px;
 
 `

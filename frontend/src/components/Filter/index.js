@@ -6,7 +6,7 @@ import Select from 'react-select'
 import PrimaryButton from '../Button/PrimaryButton'
 
 const options = [
-    { label: 'Digital Platform', value: 'digiturk' },
+    { label: "Digital Platform", value: 'digiturk' },
     { label: 'İş Bankası', value: 'isbankasi' },
     { label: 'Taşpınar', value: 'taspinar' }
 ]
@@ -15,10 +15,11 @@ const Dialog = styled.div`
     width: 30%;
     height: 100%;
     background-color: #ffff;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     border: 1px solid #d2d2d2;
     padding: 30px 24px;
+    box-shadow: 4px 6px 20px -4px #b6b7b7;
 `
 
 const DialogHeader = styled.header`
@@ -38,6 +39,7 @@ const DialogBody = styled.div`
     overflow-y: scroll;
     height: 80%;
     padding-right: 20px;
+    padding-left: 2px;
 
     &::-webkit-scrollbar-track
     {
@@ -88,13 +90,13 @@ const FilterLabel = styled.h5`
 
 function Filter(props) {
 
-    return (
+    return props.isActive && (
         <Overlay>
             <Dialog>
                 <DialogHeader>
-                    <h2>
+                    <h3>
                         Filtre
-                    </h2>
+                    </h3>
                     <div onClick={props.closeModal}>
                         <CloseIcon />
                     </div>
@@ -106,7 +108,7 @@ function Filter(props) {
                     <FilterGroup>
                         <FilterLabel>
                             Kurum
-                    </FilterLabel>
+                        </FilterLabel>
                         <Select
                             isMulti
                             placeholder="Bir kurum seçin"
@@ -116,7 +118,7 @@ function Filter(props) {
                     <FilterGroup>
                         <FilterLabel>
                             Alt Kurum
-                    </FilterLabel>
+                        </FilterLabel>
                         <Select
                             isMulti
                             placeholder="Alt kurum seçin"

@@ -14,6 +14,7 @@ export const CalendarTable = styled.table`
     border-collapse: collapse;
     border-spacing: 0px;
     background-color: #fff;
+    user-select: none;
 
     th {
         font-weight: 400;
@@ -31,7 +32,7 @@ export const CalendarTable = styled.table`
             text-align: center !important;
             color: rgb(72, 72, 72);
             width: 44px;
-        height: 44px;
+            height: 44px;
     }
     .selected {
         color: #fff ;
@@ -39,5 +40,13 @@ export const CalendarTable = styled.table`
         border-color: #8a85ff;
     }
 
+    .today {
+        background-color: #ddd;
+        border-color: #ddd;
+    }
+
 `
 
+export const CalendarHeader = styled.header`
+
+`

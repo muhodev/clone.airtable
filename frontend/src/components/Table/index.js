@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy, useFilters } from 'react-table'
 
@@ -49,109 +49,7 @@ const TableHead = styled.thead`
     text-align: left;
 `
 
-function Table() {
-    const data = useMemo(
-        () => [
-            {
-                sno: 1,
-                kurum: 'Digital Platform',
-                altKurum: 'İcra',
-                alan: "Bölgesel",
-                tahsilatiYapan: "A kişisi",
-                tarih: "15.11.2020",
-                hedefKategorisi: "Anapara",
-                tutar: "₺10.000"
-            },
-            {
-                sno: 2,
-                kurum: 'Digital Platform',
-                altKurum: 'İcra',
-                alan: "Bölgesel",
-                tahsilatiYapan: "A kişisi",
-                tarih: "15.11.2020",
-                hedefKategorisi: "Vekalet Ücreti",
-                tutar: "₺1.706"
-            },
-            {
-                sno: 3,
-                kurum: 'Digital Platform',
-                altKurum: 'Devir',
-                alan: "Bölgesel",
-                tahsilatiYapan: "A kişisi",
-                tarih: "15.11.2020",
-                hedefKategorisi: "Dosya Kapama",
-                tutar: "✔"
-            },
-            {
-                sno: 4,
-                kurum: "İş Bankası",
-                altKurum: "İcra",
-                alan: "TÜrkiye Geneli",
-                tahsilatiYapan: "A kişisi",
-                tarih: "15.11.2020",
-                hedefKategorisi: "Dosya Kapama",
-                tutar: "✔"
-            },
-            {
-                sno: 5,
-                kurum: "İş Bankası",
-                altKurum: "İcra",
-                alan: "TÜrkiye Geneli",
-                tahsilatiYapan: "A kişisi",
-                tarih: "15.11.2020",
-                hedefKategorisi: "Anapara",
-                tutar: "₺24.350"
-            }
-        ],
-        []
-    )
-
-    const columns = useMemo(
-        () => [
-            {
-                Header: "S.no",
-                accessor: "sno",
-                sortType: "basic"
-            },
-            {
-                Header: 'Kurum',
-                accessor: 'kurum',
-                sortType: "basic"
-            },
-            {
-                Header: 'Alt Kurum',
-                accessor: 'altKurum',
-                sortType: "basic"
-            },
-            {
-                Header: "Alan",
-                accessor: "alan",
-                sortType: "basic",
-            },
-            {
-                Header: "Tahsilatı Yapan",
-                accessor: "tahsilatiYapan",
-                sortType: "basic"
-            },
-            {
-                Header: "Tarih",
-                accessor: "tarih",
-                sortType: "basic"
-            },
-            {
-                Header: "Kategori",
-                accessor: "hedefKategorisi",
-                sortType: "basic"
-            },
-            {
-                Header: "Değer",
-                accessor: "tutar",
-                sortType: "basic"
-            }
-        ],
-        []
-    )
-
+function Table({ data, columns }) {
     const {
         getTableProps,
         getTableBodyProps,

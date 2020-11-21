@@ -1,7 +1,13 @@
 import styled from "styled-components"
 import React from 'react'
+import { Link } from "react-router-dom"
 import { Avatar } from "../"
 import Container from "../Container"
+
+const StyledLink = styled(Link)`
+    color: currentcolor;
+    text-decoration: none;
+`
 
 const HeaderContainer = styled(Container)`
     display: flex; 
@@ -14,7 +20,7 @@ const HeaderItems = styled.div`
     align-items: center;
 `
 
-const HeaderItem = styled.div`
+const HeaderItem = styled(StyledLink)`
     padding: 10px 20px;
 
     &:last-child {
@@ -22,20 +28,24 @@ const HeaderItem = styled.div`
     }
 `
 
+
 function Header(props) {
     return (
         <HeaderContainer>
 
             <HeaderItems>
-                <h1>LOGO</h1>
+                <h1>
+                    <StyledLink to="/">
+                        Logo
+                    </StyledLink>
+                </h1>
             </HeaderItems>
             <HeaderItems>
-                <HeaderItem>Kullanıcılar</HeaderItem>
-                <HeaderItem>Dosyalar</HeaderItem>
-                <HeaderItem>Tahsilatlar</HeaderItem>
-                <HeaderItem>Hedefler</HeaderItem>
-                <HeaderItem><Avatar name="my" /></HeaderItem>
-
+                <HeaderItem to="/kullanıcılar">Kullanıcılar</HeaderItem>
+                <HeaderItem to="/raporlar" >Raporlar</HeaderItem>
+                <HeaderItem to="/tahsilatlar">Tahsilatlar</HeaderItem>
+                <HeaderItem to="/hedefler">Hedefler</HeaderItem>
+                <HeaderItem to="/profil"><Avatar name="my" /></HeaderItem>
             </HeaderItems>
         </HeaderContainer>
     )
