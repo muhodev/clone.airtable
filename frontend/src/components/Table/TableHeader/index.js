@@ -34,9 +34,7 @@ function TableHeader(props) {
                     <FilterButton
                         onClick={props.openFilter}
                     >
-                        <span>
-                            <FilterIcon />
-                        </span>
+                        <FilterIcon />
                         <b>Filtre</b>
                     </FilterButton>
                     {

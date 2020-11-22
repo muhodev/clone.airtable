@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy, useFilters } from 'react-table'
 
@@ -50,6 +50,7 @@ const TableHead = styled.thead`
 `
 
 function Table({ data, columns }) {
+    console.log("rendering table")
     const {
         getTableProps,
         getTableBodyProps,
@@ -102,4 +103,4 @@ function Table({ data, columns }) {
     )
 }
 
-export default Table
+export default memo(Table)

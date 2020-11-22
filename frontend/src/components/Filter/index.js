@@ -89,7 +89,7 @@ const FilterLabel = styled.h5`
 `
 
 function Filter(props) {
-
+    console.log("rendering filtermodal")
     return props.isActive && (
         <Overlay>
             <Dialog>

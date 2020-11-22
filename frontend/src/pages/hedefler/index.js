@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo } from 'react'
+import React, { Fragment, useState, useMemo, useCallback } from 'react'
 import Filter from "../../components/Filter"
 import Table from '../../components/Table'
 import TableHeader from '../../components/Table/TableHeader'
@@ -8,6 +8,14 @@ import YeniHedefModal from '../../components/YeniHedefModal'
 function Hedefler(props) {
     const [isOpenFilterModal, setOpenFilterModal] = useState(false)
     const [addNewModal, setAddNewModal] = useState(false)
+
+    const toggleFilterModalHandler = useCallback((value) => {
+        setOpenFilterModal(value)
+    }, [])
+
+    const toggleAddNewModalHandler = useCallback((value) => {
+        setAddNewModal(value)
+    }, [])
 
     const data = useMemo(
         () => [
@@ -71,19 +79,19 @@ function Hedefler(props) {
 
             <Filter
                 isActive={isOpenFilterModal}
-                closeModal={setOpenFilterModal.bind(this, false)}
+                closeModal={toggleFilterModalHandler.bind(this, false)}
             />
 
             <YeniHedefModal
                 isActive={addNewModal}
-                closeModal={setAddNewModal.bind(this, false)}
+                closeModal={toggleAddNewModalHandler.bind(this, false)}
                 scopeTitle="Hedef"
             />
 
             <TableHeader
-                addNew={setAddNewModal.bind(this, true)}
+                addNew={toggleAddNewModalHandler.bind(this, true)}
                 title="Hedefler"
-                openFilter={setOpenFilterModal.bind(this, true)}
+                openFilter={toggleFilterModalHandler.bind(this, true)}
                 scopeTitle="Hedef"
             />
             <Table columns={columns} data={data} />

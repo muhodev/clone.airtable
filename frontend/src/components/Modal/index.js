@@ -1,8 +1,10 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
 import PrimaryButton from "../Button/PrimaryButton"
 import Flex from "../Flex"
 import { ReactComponent as CloseIcon } from "../Icons/Close.svg"
+import { ColoredIcon } from "../Icons/style"
+
 
 const Overlay = styled.div`
     width: 100vw;
@@ -71,7 +73,22 @@ const ModalDialogFooter = styled.footer`
     padding: 20px 0;
 `
 
+export function ModalTitleWithIcon(props) {
+
+    return (
+        <Flex alignItems="center">
+            <ColoredIcon>
+                {props.icon}
+            </ColoredIcon>
+            <p >
+                Yeni {props.scopeTitle}
+            </p>
+        </Flex>
+    )
+}
+
 function Modal(props) {
+    console.log("rendering modal")
     return (
         props.isActive &&
         <Overlay>
@@ -97,4 +114,4 @@ function Modal(props) {
     )
 }
 
-export default Modal
+export default memo(Modal)
