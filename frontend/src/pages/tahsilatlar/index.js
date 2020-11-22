@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useMemo } from 'react'
-import Table from '../../components/Table'
+import Table from '../../components/Table/TableContent'
 import Filter from '../../components/Filter'
 import TableHeader from '../../components/Table/TableHeader'
 

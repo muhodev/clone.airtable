@@ -13,6 +13,7 @@ const HeaderContainer = styled(Container)`
     display: flex; 
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
 `
 
 const HeaderItems = styled.div`
@@ -45,7 +46,9 @@ function Header(props) {
                 <HeaderItem to="/raporlar" >Raporlar</HeaderItem>
                 <HeaderItem to="/tahsilatlar">Tahsilatlar</HeaderItem>
                 <HeaderItem to="/hedefler">Hedefler</HeaderItem>
-                <HeaderItem to="/profil"><Avatar name="my" /></HeaderItem>
+                <HeaderItem to="?login=true">Giriş Yap</HeaderItem>
+
+                {/* <HeaderItem to="/profil"><Avatar name="my" /></HeaderItem> */}
             </HeaderItems>
         </HeaderContainer>
     )

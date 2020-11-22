@@ -12,7 +12,7 @@ export const ColoredIcon = styled.div`
     margin-right: 6px;
 
     svg {
-        font-size: 16px;
+        font-size: 16px !important;
         display: flex;
         align-items: center;
         justify-content: center;

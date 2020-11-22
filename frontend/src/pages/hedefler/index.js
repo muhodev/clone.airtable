@@ -6,17 +6,6 @@ import YeniHedefModal from '../../components/YeniHedefModal'
 
 
 function Hedefler(props) {
-    const [isOpenFilterModal, setOpenFilterModal] = useState(false)
-    const [addNewModal, setAddNewModal] = useState(false)
-
-    const toggleFilterModalHandler = useCallback((value) => {
-        setOpenFilterModal(value)
-    }, [])
-
-    const toggleAddNewModalHandler = useCallback((value) => {
-        setAddNewModal(value)
-    }, [])
-
     const data = useMemo(
         () => [
             {
@@ -76,26 +65,15 @@ function Hedefler(props) {
     )
     return (
         <Fragment>
-
-            <Filter
-                isActive={isOpenFilterModal}
-                closeModal={toggleFilterModalHandler.bind(this, false)}
-            />
-
-            <YeniHedefModal
-                isActive={addNewModal}
-                closeModal={toggleAddNewModalHandler.bind(this, false)}
-                scopeTitle="Hedef"
-            />
-
-            <TableHeader
-                addNew={toggleAddNewModalHandler.bind(this, true)}
+            <Table
+                filterable
+                creatable
                 title="Hedefler"
-                openFilter={toggleFilterModalHandler.bind(this, true)}
                 scopeTitle="Hedef"
+                columns={columns}
+                data={data}
+                path="/hedefler"
             />
-            <Table columns={columns} data={data} />
-
         </Fragment>
     )
 }
