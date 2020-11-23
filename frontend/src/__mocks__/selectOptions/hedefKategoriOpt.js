@@ -1,14 +1,14 @@
 export default [
     {
         label: "Ana para",
-        value: "ana para"
+        value: "1"
     },
     {
         label: "Vekalet Ücreti",
-        value: "vekalet ücreti"
+        value: "2"
     },
     {
         label: "Dosya Kapama",
-        value: "dosya kapama"
+        value: "3"
     }
 ]

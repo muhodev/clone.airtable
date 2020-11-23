@@ -4,7 +4,7 @@ import Flex from "../Flex"
 export const Overlay = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,.06);
+    background-color: rgba(0,0,0,.1);
     position: fixed;
     top:0;
     left:0;
@@ -16,7 +16,7 @@ export const Overlay = styled.div`
 
 export const ModalDialog = styled.div`
     background-color: #fff;
-    width: 45%;
+    width: ${props => props.width ? props.width : "45%"};
     height: 85%;
     border-radius: 8px;
     border: 1px solid #d2d2d2;

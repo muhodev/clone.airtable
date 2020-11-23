@@ -1,40 +1,25 @@
-import React, { memo, useCallback, useState } from 'react'
+import React, { memo, useState } from 'react'
 import Select from "react-select"
 import { hedefKagetoriOpt, monthsOpt, takimOpt } from "../../__mocks__/selectOptions/"
 import { ReactComponent as NoteAddIcon } from "../Icons/NoteAdd.svg"
-import { ModalTitleWithIcon } from '../Modal'
 import Modal from '../Modal/RootModal'
 
 import { Label, LabelDescription, InputControl, InputGroup } from "../Form"
 import { Caption } from "../Typography/style"
 import { agentsOptBuilder } from "../Agents/AgentsOptions"
 
-// {value: "deger_id", label:"değer"} select optionsdaki idleri local state'e kaydetmek için kullanılır
-const selectedId = (newValue) => {
-    const newValueSplit = newValue.value.split("_")
-    const newValueId = newValueSplit[newValueSplit.length - 1]
-    return newValueId
-}
 
 function YeniHedefModal(props) {
-    console.log("rendering yenihedefmodal")
     const [agent, setAgent] = useState(null)
     const [ay, setAy] = useState(monthsOpt[new Date().getMonth()])
     const [takim, setTakim] = useState()
 
-    const closeModalHandler = useCallback(() => {
-        setAgent(null)
-        props.closeModal()
-    }, [])
-
     return (
         <Modal
-            title={
-                <ModalTitleWithIcon
-                    icon={<NoteAddIcon />}
-                    scopeTitle={props.scopeTitle}
-                />
-            }
+            title="Yeni Hedef"
+            titleIcon={<NoteAddIcon />}
+            actionable
+            onSave={() => alert("success")}
         >
             <LabelDescription>
                 Hedefler, agent ve takım bazlı olarak eklenir. Hedefleri eklemeden önce agent'lerin iş günlerini belirlediğinizden emin olun.
@@ -45,7 +30,7 @@ function YeniHedefModal(props) {
                 <InputControl>
                     <Label>Agent</Label>
                     <Select
-                        onChange={(newValue) => setAgent(selectedId(newValue))}
+                        onChange={(newValue) => setAgent(newValue.value)}
                         placeholder="Bir agent seçin"
                         options={agentsOptBuilder()}
                     />
@@ -61,7 +46,7 @@ function YeniHedefModal(props) {
                     <Label>Takım</Label>
                     <Select
                         placeholder="Bir takım seçin"
-                        onChange={newValue => setTakim(selectedId(newValue))}
+                        onChange={newValue => setTakim(newValue.value)}
                         options={takimOpt}
                     />
                 </InputControl>

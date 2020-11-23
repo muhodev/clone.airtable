@@ -1,14 +1,14 @@
 export default [
     {
-        value: "digitürk icra takımı_1",
+        value: "1",
         label: "Digitürk İcra Takımı"
     },
     {
-        value: "digitürk devir takımı_2",
+        value: "2",
         label: "Digitürk Devir Takımı"
     },
     {
-        value: "iş bankası icra takımı_3",
+        value: "3",
         label: "İş Bankası İcra Takımı"
     }
 ]
