@@ -6,9 +6,16 @@ const Button = styled.button`
     background-color: transparent;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     padding: 10px 12px;
     border-radius: 4px;
+
+    &[disabled] {
+        opacity: .6;
+        cursor: no-drop;
+    }
 
 `
 

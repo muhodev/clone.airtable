@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { ReactComponent as VisibleIcon } from "../Icons/Visible.svg"
 import { ReactComponent as VisibleOffIcon } from "../Icons/VisibleOff.svg"
@@ -44,12 +44,17 @@ const PasswordInputWrapper = styled.div`
     display: flex;
     align-items: center;
 
-    svg {
+    span {
         display: flex;
         position: absolute; 
         right: 12px;
-        font-size: 22px !important;
-        color: #666;
+        font-size: 24px !important;
+        color: #aaa;
+        cursor:pointer;
+
+        svg {
+            font-size: inherit;
+        }
     }
 `
 
@@ -59,10 +64,25 @@ const PasswordInputEl = styled(Input)`
 
 
 export function PasswordInput(props) {
+    const [isVisible, setVisible] = useState(false)
     return (
         <PasswordInputWrapper>
-            <PasswordInputEl type="password" placeholder={props.placeholder || "Şifrenizi girin"} />
-            <VisibleIcon />
+            <PasswordInputEl
+                value={props.value}
+                onChange={props.onChange}
+                type={isVisible ? "text" : "password"}
+                placeholder={props.placeholder || "Şifrenizi girin"} />
+            <span onClick={setVisible.bind(this, !isVisible)}>
+
+                {
+                    isVisible ?
+                        <VisibleOffIcon />
+                        :
+                        <VisibleIcon />
+
+                }
+            </span>
+
         </PasswordInputWrapper>
     )
 }

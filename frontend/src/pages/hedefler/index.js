@@ -1,9 +1,5 @@
 import React, { Fragment, useState, useMemo, useCallback } from 'react'
-import Filter from "../../components/Filter"
 import Table from '../../components/Table'
-import TableHeader from '../../components/Table/TableHeader'
-import YeniHedefModal from '../../components/YeniHedefModal'
-
 
 function Hedefler(props) {
     const data = useMemo(

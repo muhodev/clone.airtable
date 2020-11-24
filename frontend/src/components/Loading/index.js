@@ -28,7 +28,7 @@ const Overlay = styled.div`
     justify-content: center;
 `
 
-const Loader = styled.div`
+export const Loader = styled.div`
     display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -55,15 +55,15 @@ const Loader = styled.div`
 `
 
 function Loading() {
-    return (
-        <Overlay>
-            <Loader>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </Loader>
-        </Overlay>
-    )
+	return (
+		<Overlay>
+			<Loader>
+				<div className="bar"></div>
+				<div className="bar"></div>
+				<div className="bar"></div>
+			</Loader>
+		</Overlay>
+	)
 }
 
 export default Loading

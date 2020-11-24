@@ -8,6 +8,8 @@ import { Label, LabelDescription, InputControl, InputGroup } from "../Form"
 import { Caption } from "../Typography/style"
 import { agentsOptBuilder } from "../Agents/AgentsOptions"
 
+import { Input } from "../Form/style"
+
 
 function YeniHedefModal(props) {
     const [agent, setAgent] = useState(null)
@@ -75,6 +77,7 @@ function YeniHedefModal(props) {
             </InputGroup>
             <InputControl>
                 <Label>Değer</Label>
+                <Input placeholder="Bir değer giriniz" />
             </InputControl>
         </Modal>
     )
