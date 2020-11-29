@@ -17,6 +17,10 @@ const Button = styled.button`
         cursor: no-drop;
     }
 
+    &:hover {
+        opacity: .9;
+    }
+
 `
 
 export default Button

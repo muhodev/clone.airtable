@@ -5,20 +5,149 @@ function Hedefler(props) {
     const data = useMemo(
         () => [
             {
-                sno: 1,
                 agent: 'A kişisi',
                 takim: 'Digitürk İcra Takımı',
                 ay: "Aralık 2020",
                 hedefKategorisi: "Anapara",
-                hedefDegeri: "₺110.000"
+                hedefDegeri: "₺110.000",
+                deneme: "deneme",
+
             },
             {
-                sno: 2,
                 agent: 'A kişisi',
                 takim: 'Digitürk Devir Takımı',
                 ay: "Aralık 2020",
                 hedefKategorisi: "Vekalet Ücreti",
-                hedefDegeri: "₺12.706"
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk Devir Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "Vekalet Ücreti",
+                hedefDegeri: "₺12.706",
+                deneme: "deneme",
             }
         ],
         []
@@ -26,11 +155,6 @@ function Hedefler(props) {
 
     const columns = useMemo(
         () => [
-            {
-                Header: "S.no",
-                accessor: "sno",
-                sortType: "basic"
-            },
             {
                 Header: 'Agent',
                 accessor: 'agent',
@@ -54,6 +178,71 @@ function Hedefler(props) {
             {
                 Header: "Hedef Değeri",
                 accessor: "hedefDegeri",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
+                sortType: "basic"
+            },
+            {
+                Header: "Deneme",
+                accessor: "deneme",
                 sortType: "basic"
             }
         ],

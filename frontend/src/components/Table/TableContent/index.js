@@ -1,106 +1,86 @@
-import React, { memo } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useTable, useSortBy, useFilters } from 'react-table'
+import Table from '..'
+import Flex from '../../Flex'
 
-const TableEl = styled.table`
-    background-color: #fff;
-    border-radius: 4px;
-    width: 100%;
-    min-height: 100px;
-    border: 1px solid #d2d2d2;
-    border-spacing: 0;
-    border-collapse: separate;
-    font-size: 14px;
+const TableWrapper = styled.div`
+    font-size: 13px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+`
+const TableContainer = styled.div`
 
-    tbody {
-        tr {
-            transition: background-color 200ms;
-
-            &:hover {
-                background-color: #eeeef0;
-            }
-        }
-    }
-    td {
-        padding: 16px 12px;
-        border: 0;
-    }
-    th {
-        border-bottom: 1px solid #d2d2d2;
-        padding: 16px 12px;
-        align-items: center;
-        div {
-            display: flex;
-            align-items: center;
-        }
-
-        span {
-            user-select: none;
-            &.sortable-span {
-                min-width: 15px;
-                min-height: 22px;
-            }
-        }
-        
-    }
 `
 
-const TableHead = styled.thead`
-    text-align: left;
+const TableCell = styled.div`
+    border-right: 1px solid #eee;
+    background: #fff;
+    padding: 10px 18px;
+    ${props => props.width ? `
+        min-width: ${props.width};
+    `: `
+        min-width: 180px;
+    `}
 `
+const TableHeader = styled.div`
+    background-color: #f5f5f5;
+    border-top: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-shrink: 0;
+    ${TableCell} {
+        background-color: #f5f5f5;
+    }
+    position: sticky;
+    top: 0;
+`
+
+const TableRow = styled(Flex)`
+    border-bottom: 1px solid #dde1e3;
+    display: flex;
+    flex-shrink: 0;
+`
+
+
 
 function TableContent({ data, columns }) {
-    console.log("rendering table")
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({ columns, data }, useFilters, useSortBy)
+
 
     return (
-        <TableEl {...getTableProps()}>
-            <TableHead>
-                {headerGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map(column => (
-                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                <div>
+        <TableWrapper>
 
-                                    <span>
-                                        {column.render('Header')}
-                                    </span>
-                                    <span className="sortable-span">
-                                        {column.isSorted ? (column.isSortedDesc ? '🔽' : '🔼') : ' '}
-                                    </span>
-                                </div>
-                            </th>
-                        ))}
-                    </tr>
-                ))}
-            </TableHead>
-            <tbody {...getTableBodyProps()}>
-                {rows.map(row => {
-                    prepareRow(row)
-                    return (
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map(cell => {
-                                return (
-                                    <td
-                                        {...cell.getCellProps()}
+            <TableHeader>
+                <TableRow>
+                    <TableCell width="66px">
+                        <input type="checkbox" />
+                    </TableCell>
+                    {
+                        columns.map((col, index) =>
+                            <TableCell key={index}>
+                                {col.Header}
+                            </TableCell>
+                        )
+                    }
+                </TableRow>
+            </TableHeader>
+            {
+                data.map((row, index) => {
+                    return <TableRow key={index}>
+                        <TableCell width="66px">
+                            {index + 1}
+                        </TableCell>
+                        {columns.map((col, ind) => {
+                            return <TableCell key={ind}>{row[col.accessor]}</TableCell>
+                        }
+                        )}
 
-                                    >
-                                        {cell.render('Cell')}
-                                    </td>
-                                )
-                            })}
-                        </tr>
-                    )
-                })}
-            </tbody>
-        </TableEl>
+                    </TableRow>
+                }
+                )
+            }
+        </TableWrapper>
     )
 }
 
-export default memo(TableContent)
+export default TableContent

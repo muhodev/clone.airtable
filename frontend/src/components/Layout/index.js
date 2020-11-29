@@ -9,11 +9,9 @@ function Layout(props) {
         <Fragment>
             <Header />
             <main>
-                <Container>
-                    {
-                        props.children
-                    }
-                </Container>
+                {
+                    props.children
+                }
             </main>
             <footer></footer>
         </Fragment>
