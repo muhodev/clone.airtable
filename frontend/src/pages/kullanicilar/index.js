@@ -6,21 +6,26 @@ const cachedData = {}
 
 function Kullanicilar(props) {
     let [data, setData] = useState([])
-    useEffect(async () => {
-        const url = "/users"
+    useEffect(() => {
+        async function fetchData() {
+            const url = "/users"
 
-        try {
-            if (cachedData[url]) {
-                setData(cachedData[url])
-            } else {
-                const dataUsers = await instance.get("/users")
-                const tableUsers = dataUsers.data.data.users.map((user, index) => ({ sno: index + 1, email: user.email, displayName: `${user.name} ${user.surname}`, role: user.role }))
-                setData(tableUsers)
-                cachedData[url] = tableUsers
+            try {
+                if (cachedData[url]) {
+                    setData(cachedData[url])
+                } else {
+                    const dataUsers = await instance.get("/users")
+                    const tableUsers = dataUsers.data.data.users.map((user, index) => ({ sno: index + 1, email: user.email, displayName: `${user.name} ${user.surname}`, role: user.role }))
+                    setData(tableUsers)
+                    cachedData[url] = tableUsers
+                }
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
         }
+
+        fetchData()
+
     }, [])
 
 

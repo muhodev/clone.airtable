@@ -42,9 +42,9 @@ const AddTableButton = styled.div`
 `
 
 const AltbarTap = styled.div`
-    min-width: 106px;
-    width: 106px;
-    padding: 0 16px;
+    min-width: 118px;
+    width: 118px;
+    padding: 0 10px;
     height: 100%;
     user-select: none;
     ${props => props.active ? `
@@ -65,8 +65,14 @@ const AltbarTap = styled.div`
 
     svg {
         font-size: 16px;
-        margin-left: 4px;
+        margin-left: 8px;
         opacity: .75;
+    }
+
+    ${AltbarItemGroup} {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
     }
 
 `
