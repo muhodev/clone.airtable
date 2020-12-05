@@ -1,7 +1,8 @@
-import React, { Fragment, useState, useMemo, useCallback } from 'react'
-import Table from '../../components/Table'
+import React, { Fragment, useMemo } from 'react'
+import { Header } from '../../../components'
+import Table from '../../../components/Table'
 
-function Hedefler(props) {
+function SpaceId(props) {
     const data = useMemo(
         () => [
             {
@@ -253,6 +254,7 @@ function Hedefler(props) {
     )
     return (
         <Fragment>
+            <Header />
             <Table
                 filterable
                 creatable
@@ -266,4 +268,4 @@ function Hedefler(props) {
     )
 }
 
-export default Hedefler
+export default SpaceId

@@ -5,6 +5,7 @@ import { ReactComponent as LogoIcon } from "../Icons/Logo.svg"
 import { ReactComponent as HelpIcon } from "../Icons/Help.svg"
 import { ReactComponent as NotificationIcon } from "../Icons/Notification.svg"
 import { ReactComponent as ExpandIcon } from "../Icons/Expand.svg"
+import { Link } from 'react-router-dom'
 
 
 
@@ -15,7 +16,7 @@ const TopbarWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 `
-const Logo = styled(Flex)`
+const Logo = styled(Link)`
 svg {
     font-size: 24px;
 }
@@ -67,7 +68,7 @@ Logo.defaultProps =
 function Topbar(props) {
     return (
         <TopbarWrapper>
-            <Logo>
+            <Logo to="/">
                 <LogoIcon />
             </Logo>
             <TopbarItems>
