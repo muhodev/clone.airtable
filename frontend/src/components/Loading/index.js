@@ -18,7 +18,7 @@ const rotate = keyframes`
 const Overlay = styled.div`
     width: 100vw;
     height: 100vh;
-    background: #f3f7f9;
+    background: #fff;
     position: fixed;
     top:0;
     left:0;
@@ -36,7 +36,7 @@ export const Loader = styled.div`
 	.bar {
 		width: 10px;
 		height: 5px;
-		background: #10c15c;
+		background: #1283da;
 		margin: 2px;
 		animation: ${rotate} 1s infinite linear;
 

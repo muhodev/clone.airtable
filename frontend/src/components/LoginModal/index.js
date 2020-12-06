@@ -8,7 +8,7 @@ import PrimaryButton from '../Button/PrimaryButton'
 import { useLocation, useHistory } from "react-router-dom"
 import instance from '../../axios'
 import { Loader } from '../Loading'
-import Spinner from '../Spinner'
+import Spinner from '../Shared/Spinner'
 
 const FormWrapper = styled.form`
     padding-top: 10px;

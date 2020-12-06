@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Flex from '../../Flex'
+import Flex from '../Shared/Flex'
 import { Logo, Avatar } from './styled'
 import { Link } from "react-router-dom"
-import { ReactComponent as NotificationIcon } from "../../Icons/Notification.svg"
-import { ReactComponent as HelpIcon } from "../../Icons/Help.svg"
+import { ReactComponent as NotificationIcon } from "../Icons/Notification.svg"
+import { ReactComponent as HelpIcon } from "../Icons/Help.svg"
 
 
 const Header = styled.header`

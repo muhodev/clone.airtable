@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Flex from '../Flex'
+import Flex from '../Shared/Flex'
 import { ReactComponent as MenuListIcon } from "../Icons/MenuList.svg"
 import { ReactComponent as ExpandIcon } from "../Icons/Expand.svg"
 import { ReactComponent as AddIcon } from "../Icons/Add.svg"

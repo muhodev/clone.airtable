@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from "react"
-import Filter from "../Filter"
-import Loading from "../Loading"
-import YeniHedefModal from "../YeniHedefModal"
+import Filter from "../../Filter"
+import Loading from "../../Loading"
+import YeniHedefModal from "../../YeniHedefModal"
 
-const LoginModal = lazy(() => import("../LoginModal"))
+const LoginModal = lazy(() => import("../../LoginModal"))
 
 function GlobalModal(props) {
     const params = new URLSearchParams(props.location.search)

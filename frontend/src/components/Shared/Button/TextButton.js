@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from './'
+import Button from '.'
 
 const TextButton = styled(Button)`
     

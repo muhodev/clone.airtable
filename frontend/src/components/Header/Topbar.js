@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Flex from '../Flex'
+import Flex from '../Shared/Flex'
 import { ReactComponent as LogoIcon } from "../Icons/Logo.svg"
 import { ReactComponent as HelpIcon } from "../Icons/Help.svg"
 import { ReactComponent as NotificationIcon } from "../Icons/Notification.svg"

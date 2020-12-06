@@ -2,7 +2,7 @@ import styled from "styled-components"
 import React from 'react'
 import { Link } from "react-router-dom"
 import { Avatar } from "../"
-import Container from "../Container"
+import Container from "../Shared/Container"
 import Topbar from "./Topbar"
 import Altbar from "./Altbar"
 

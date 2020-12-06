@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex } from '../../components'
-import AppHeader from "../../components/Header/AppHeader"
+import AppHeader from "../../components/AppHeader"
 import { ReactComponent as SearchIcon } from "../../components/Icons/Search.svg"
 import { ReactComponent as PeopleIcon } from "../../components/Icons/People.svg"
 import { ReactComponent as PlusIcon } from "../../components/Icons/Plus.svg"
@@ -11,7 +11,8 @@ import { ReactComponent as BasicPlanIcon } from "../../components/Icons/BasicPla
 import { ReactComponent as MonetizationIcon } from "../../components/Icons/Monetization.svg"
 
 
-import { Avatar } from '../../components/Header/AppHeader/styled'
+import { Avatar } from '../../components/AppHeader/styled'
+import { Link } from 'react-router-dom'
 
 const WorkSpaces = styled(Flex)`
     width: 90%;
@@ -194,11 +195,13 @@ const Bases = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
 `
-const Base = styled.div`
+const Base = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 40px;
+    text-decoration: none;
+    color: currentColor;
 `
 const BaseIcon = styled.div`
     width: 82px;
@@ -231,8 +234,6 @@ const AddBaseIcon = styled(BaseIcon)`
         opacity: 0.5;
     }
 `
-
-
 
 function Home(props) {
     return (
@@ -297,7 +298,7 @@ function Home(props) {
                             </WorkspaceHeaderItems>
                         </WorkspaceHeader>
                         <Bases>
-                            <Base>
+                            <Base to="/w/bhb/tahsilat-yönetimi/hedefler">
                                 <BaseIcon>
                                     <MonetizationIcon />
                                 </BaseIcon>

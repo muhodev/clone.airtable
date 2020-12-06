@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ReactComponent as AppLogoIcon } from "../../Icons/AppLogo.svg"
+import { ReactComponent as AppLogoIcon } from "../Icons/AppLogo.svg"
 
 const LogoWrapper = styled.div`
     color: #333;
@@ -30,15 +30,3 @@ export function Logo(props) {
         </LogoWrapper>
     )
 }
-
-export const Avatar = styled.div`
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-`
