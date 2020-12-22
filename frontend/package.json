@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "license": "ISC",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -142,6 +143,18 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-root-import",
+        {
+          "rootPathSuffix": "src",
+          "rootPathPrefix": "@"
+        }
+      ]
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.6.0"
   }
 }

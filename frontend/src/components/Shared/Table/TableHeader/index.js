@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react"
 import styled from 'styled-components'
-import { ReactComponent as ListIcon } from "../../Icons/List.svg"
-import { ReactComponent as HideIcon } from "../../Icons/Hide.svg"
-import { ReactComponent as FilterIcon } from "../../Icons/Filter.svg"
-import { ReactComponent as GroupIcon } from "../../Icons/Group.svg"
-import { ReactComponent as SortIcon } from "../../Icons/Sort.svg"
-import { ReactComponent as SearchIcon } from "../../Icons/Search.svg"
-import { ReactComponent as PeopleIcon } from "../../Icons/People.svg"
-import { ReactComponent as SettingIcon } from "../../Icons/Setting.svg"
+import {
+    ListIcon,
+    HideIcon,
+    FilterIcon,
+    GroupIcon,
+    SortIcon,
+    SearchIcon,
+    PeopleIcon,
+    SettingIcon
+} from "@/components/Icons"
 
 
 

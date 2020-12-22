@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from '../../components'
-import AppHeader from "../../components/AppHeader"
-import { ReactComponent as SearchIcon } from "../../components/Icons/Search.svg"
-import { ReactComponent as PeopleIcon } from "../../components/Icons/People.svg"
-import { ReactComponent as PlusIcon } from "../../components/Icons/Plus.svg"
-import { ReactComponent as TrashIcon } from "../../components/Icons/Trash.svg"
-import { ReactComponent as ExpandIcon } from "../../components/Icons/Expand.svg"
-import { ReactComponent as BasicPlanIcon } from "../../components/Icons/BasicPlan.svg"
-import { ReactComponent as MonetizationIcon } from "../../components/Icons/Monetization.svg"
-
-
-import { Avatar } from '../../components/AppHeader/styled'
 import { Link } from 'react-router-dom'
+import { Flex } from '@/components'
+import AppHeader from "@/components/AppHeader"
+import { Avatar } from '@/components/AppHeader/styled'
+import {
+    SearchIcon,
+    PeopleIcon,
+    PlusIcon,
+    TrashIcon,
+    ExpandIcon,
+    BasicPlanIcon,
+    MonetizationIcon
+} from "@/components/Icons"
 
 const WorkSpaces = styled(Flex)`
     width: 90%;
@@ -298,12 +298,20 @@ function Home(props) {
                             </WorkspaceHeaderItems>
                         </WorkspaceHeader>
                         <Bases>
-                            <Base to="/w/bhb/tahsilat-yönetimi/hedefler">
+                            <Base to="/w/bhb/hedefler">
                                 <BaseIcon>
                                     <MonetizationIcon />
                                 </BaseIcon>
                                 <BaseTitle>
-                                    Tahsilat Yönetimi
+                                    Hedefler
+                                </BaseTitle>
+                            </Base>
+                            <Base to="/w/bhb/tahsilatlar">
+                                <BaseIcon>
+                                    <MonetizationIcon />
+                                </BaseIcon>
+                                <BaseTitle>
+                                    Tahsilatlar
                                 </BaseTitle>
                             </Base>
                             <Base>

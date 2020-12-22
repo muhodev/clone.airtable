@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { ReactComponent as VisibleIcon } from "../Icons/Visible.svg"
-import { ReactComponent as VisibleOffIcon } from "../Icons/VisibleOff.svg"
+import { VisibleIcon, VisibleOffIcon } from "@/components/Icons"
 
 export const LabelDescription = styled.p`
     color: #9599a8;

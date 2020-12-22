@@ -1,14 +1,14 @@
 import styled from 'styled-components'
+import { flexbox, space, layout } from 'styled-system'
+import Box from "../Box"
 
-
-const Flex = styled.div`
-
-    display: flex;
-    ${props => props.alignItems && `align-items: ${props.alignItems};`}
-    ${props => props.justifyContent && `justify-content: ${props.justifyContent};`}
-    ${props => props.flexAuto && `flex: 1 1 auto;`}
-
-
-`
+const Flex = styled(Box)(
+    {
+        display: "flex"
+    },
+    layout,
+    flexbox,
+    space
+)
 
 export default Flex

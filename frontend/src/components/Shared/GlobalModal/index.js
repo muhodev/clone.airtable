@@ -1,9 +1,6 @@
 import React, { lazy, Suspense } from "react"
-import Filter from "../../Filter"
-import Loading from "../../Loading"
-import YeniHedefModal from "../../YeniHedefModal"
-
-const LoginModal = lazy(() => import("../../LoginModal"))
+import { Loading } from "@/components/"
+const LoginModal = lazy(() => import("@/components/LoginModal"))
 
 function GlobalModal(props) {
     const params = new URLSearchParams(props.location.search)
@@ -14,9 +11,9 @@ function GlobalModal(props) {
         component = <LoginModal />
     } else if (props.location.pathname === "/hedefler") {
         if (params.get("yeni")) {
-            component = <YeniHedefModal />
+            component = "yeni hedef"
         } else if (params.get("filtrele")) {
-            component = <Filter />
+            component = "<Filter />"
         }
     }
     return (

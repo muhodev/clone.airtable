@@ -2,11 +2,7 @@ import React from 'react'
 import { Input } from '../../Form/style'
 import styled from 'styled-components'
 import Flex from '../../Flex'
-import { ReactComponent as CloseIcon } from "../../Icons/Close.svg"
-import { ReactComponent as FieldTextIcon } from "../../Icons/FieldText.svg"
-import { ReactComponent as FieldSelectIcon } from "../../Icons/FieldSelect.svg"
-
-
+import { CloseIcon, FieldTextIcon, FieldSelectIcon } from "@/components/Icons"
 
 const Overlay = styled.div`
     width: 100vw;

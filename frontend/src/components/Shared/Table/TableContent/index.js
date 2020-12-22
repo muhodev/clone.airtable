@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Table from '..'
 import Flex from '../../Flex'
-import { ReactComponent as FieldTextIcon } from "../../Icons/FieldText.svg"
-import { ReactComponent as ExpandIcon } from "../../Icons/Expand.svg"
-import { ReactComponent as FieldSelectIcon } from "../../Icons/FieldSelect.svg"
-import { ReactComponent as FieldDateIcon } from "../../Icons/FieldDate.svg"
-import { ReactComponent as ExpandFullIcon } from "../../Icons/ExpandFull.svg"
+import {
+    FieldTextIcon,
+    ExpandIcon,
+    FieldSelectIcon,
+    FieldDateIcon,
+    ExpandFullIcon
+} from "@/components/Icons"
 import TableModal from '../TableModal'
 import useDoubleClick from '../useDoubleClick'
 
@@ -212,12 +214,6 @@ function TableContent({ data, columns }) {
     const [isActiveModal, setActiveModal] = useState(false)
     const [isEdit, setEdit] = useState(true)
     const [modalPayload, setModalPayload] = useState({})
-
-    const [refCallback, elem] = useDoubleClick(changebackgroundColor);
-
-    function changebackgroundColor() {
-        alert("changed")
-    }
 
     const selectCell = (rowIndex, colIndex) => {
         setSelectedCell(`${rowIndex},${colIndex}`)

@@ -1,14 +1,8 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
-import RootModal from '../Modal/RootModal'
-import { ReactComponent as FaceIcon } from "../Icons/Face.svg"
-import { InputControl, LabelDescription } from '../Form'
-import { Input, Label, PasswordInput } from '../Form/style'
-import PrimaryButton from '../Button/PrimaryButton'
 import { useLocation, useHistory } from "react-router-dom"
-import instance from '../../axios'
-import { Loader } from '../Loading'
-import Spinner from '../Shared/Spinner'
+import { FaceIcon } from "@/components/Icons"
+import instance from '@/axios'
 
 const FormWrapper = styled.form`
     padding-top: 10px;
