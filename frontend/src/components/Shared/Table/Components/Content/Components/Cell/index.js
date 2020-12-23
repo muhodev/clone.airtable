@@ -1,30 +1,18 @@
-import React from 'react'
 import styled from "styled-components"
 
-import { Box, Text } from "@/components"
-
-const Wrapper = styled.div`
+const Cell = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    border-right: 1px solid #dde1e3;
+    border-right: 1px solid #f0f0f0;
     background-color: #fff;
     border-bottom: 1px solid #dde1e3;
+    cursor: pointer;
 
 `
-
-function Cell(props) {
-    return (
-        <Wrapper style={{ width: "180px" }}>
-            <Box pl="2">
-                <Text fontSize="body.secondary">
-                    {
-                        props.data
-                    }
-                </Text>
-            </Box>
-        </Wrapper>
-    )
+Cell.defaultProps = {
+    style: { width: "180px" }
 }
+
 
 export default Cell

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Wrapper } from "./style"
 
+import { ColumnCellWrapper } from "./style"
 import { Flex, Icon, Text } from "@/components"
 import { ExpandIcon, FieldTextIcon, FieldSelectIcon, FieldLinkRecordIcon, FieldDateIcon } from "@/components/Icons"
 
@@ -19,11 +19,9 @@ const fields = {
     }
 }
 
-function Cell(props) {
+function ColumnCell(props) {
     return (
-        <Wrapper
-            style={{ width: "180px" }}
-        >
+        <ColumnCellWrapper>
             <Flex pl={2}>
                 <Icon fontSize="icon.sm" color="icon.opac">
                     {fields[props.column.type].icon}
@@ -37,8 +35,8 @@ function Cell(props) {
                     <ExpandIcon />
                 </Icon>
             </Flex>
-        </Wrapper>
+        </ColumnCellWrapper>
     )
 }
 
-export default Cell
+export default ColumnCell

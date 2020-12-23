@@ -1,24 +1,27 @@
 import React from 'react'
-import { Cell, CheckboxCell } from "./Components"
+import CheckboxCell from "./CheckboxCell"
+import ColumnCell from "./ColumnCell"
+
 import { Wrapper } from "./style"
 
 import TableContext from "@/context/tableContext"
+import AddColumnCell from './AddColumnCell'
 
 function Columns({ columns }) {
     return (
         <TableContext.Consumer>
             {
-                ({ columns, addColumn }) => (
+                ({ columns }) => (
+
                     <Wrapper>
                         <CheckboxCell />
                         {
                             columns.map((column, index) => (
-                                <Cell key={index} column={column} />
+                                <ColumnCell key={index} column={column} />
                             ))
                         }
-                        <button onClick={() => addColumn({ Header: "Deneme", accessor: "deneme", type: "text" })}>
-                            Add column
-                        </button>
+
+                        <AddColumnCell />
                     </Wrapper>
 
                 )

@@ -12,7 +12,23 @@ function SpaceId(props) {
                 hedefKategorisi: "anapara",
                 hedefDegeri: "₺110.000"
 
-            }
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk İcra Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "anapara",
+                hedefDegeri: "₺110.000"
+
+            },
+            {
+                agent: 'A kişisi',
+                takim: 'Digitürk İcra Takımı',
+                ay: "Aralık 2020",
+                hedefKategorisi: "anapara",
+                hedefDegeri: "₺110.000"
+
+            },
         ]
     )
 
