@@ -5,11 +5,14 @@ import { Row, Cell } from ".."
 import { CellWrapper, CellCheckbox } from "../Cell/style"
 import { ModalExpandIcon } from "./style"
 import { PlusIcon } from "@/components/Icons"
-import CategoryCellLabel from "./CategoryCellLabel"
+import SwitchCell from './SwitchCell'
+import DetailModal from "../DetailModal"
 
 function Rows() {
 
     const [selectedCell, setSelectedCell] = useState("null,null")  // "colIndex,rowIndex"
+
+    const [isOpenDetailModal, setOpenDetailModal] = useState(false);
 
     return (
         <TableContext.Consumer>
@@ -19,9 +22,9 @@ function Rows() {
                         <Row key={rowIndex}>
                             <Cell style={{ width: "50px" }}>
                                 <CellCheckbox
+                                    onClick={setOpenDetailModal.bind(this, true)}
                                     active={selectedCell.split(",")[1] == rowIndex}
                                 >
-                                    {console.log(selectedCell.split(",")[1], rowIndex)}
                                     <div className="cell-checkbox-hover">
                                         <input type="checkbox" />
                                         <ModalExpandIcon />
@@ -37,24 +40,21 @@ function Rows() {
                                         selected={`${colIndex},${rowIndex}` === selectedCell}
                                     >
                                         <Box pl={2}>
-                                            {
-                                                col.type === "select" ?
-                                                    <CategoryCellLabel
-                                                        options={col.options}
-                                                        valueId={cell[col.accessor]}
-                                                    />
-
-                                                    :
-                                                    <Text fontSize="13px">
-                                                        {
-                                                            cell[col.accessor]
-                                                        }
-                                                    </Text>
-                                            }
+                                            <SwitchCell
+                                                col={col}
+                                                value={cell[col.accessor]}
+                                            />
                                         </Box>
                                     </CellWrapper>
                                 </Cell>
                             ))}
+                            {
+                                isOpenDetailModal &&
+                                <DetailModal
+                                    closeModal={setOpenDetailModal.bind(this, false)}
+                                    columns={columns}
+                                    data={cell} />
+                            }
                         </Row>
                     ))}
                     <Row>
@@ -71,6 +71,7 @@ function Rows() {
                             ))
                         }
                     </Row>
+
                 </Fragment>
 
             )}

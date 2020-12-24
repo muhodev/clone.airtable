@@ -12,7 +12,7 @@ const Label = styled.div`
     display: inline-flex;
     border-radius: 999px;
     ${props => colors[props.color] ? colors[props.color] : colors["default"]}
-    font-size: 13px;
+    font-size: 12px;
     padding:3px 6px;
 `
 Label.defaultProps = {
@@ -22,7 +22,6 @@ Label.defaultProps = {
 function CategoryCellLabel({ valueId, options }) {
     if (!valueId || !options[valueId]) return null
 
-    console.log(colors[options[valueId].color])
     return (
         <Label color={options[valueId].color}>
             {options[valueId].value}

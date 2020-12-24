@@ -22,8 +22,8 @@ const Overlay = styled.div`
 const Dialog = styled.div`
     position: absolute;
     width: 40%;
+    
     height: calc(90% - 48px);
-    top: 78px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
@@ -107,8 +107,7 @@ DialogClose.defaultProps = {
 }
 
 function TableModal(props) {
-    console.log(props.payload)
-    return props.isActive && (
+    return (
         <Overlay>
             <Dialog>
                 <DialogHeader>
@@ -119,7 +118,7 @@ function TableModal(props) {
                 <DialogBody>
                     <DialogBodyContainer>
                         {
-                            props.payload.col.map((data, index) => {
+                            props.columns.map((data, index) => {
                                 return (
                                     <InputGroup key={index}>
                                         <Label>
