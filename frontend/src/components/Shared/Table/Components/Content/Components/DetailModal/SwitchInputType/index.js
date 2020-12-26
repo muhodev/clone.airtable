@@ -1,11 +1,15 @@
 import React from 'react'
-import { Label } from "./style"
+import { Label } from "../style"
 import { Icon } from "@/components"
 import { FieldDateIcon, FieldTextIcon, FieldSelectIcon, FieldLinkRecordIcon } from "@/components/Icons"
+import LinkRecordInputType from './LinkRecordInputType'
 
 
 function SwitchInputType(props) {
     const { column, data } = props
+
+    let inputData = data[column.accessor] || null
+
     switch (column.type) {
         case "text":
 
@@ -18,14 +22,8 @@ function SwitchInputType(props) {
                 </span>
             </Label>
         case "linkRecord":
-            return <Label>
-                <Icon fontSize="icon.sm" color="icon.opac">
-                    <FieldLinkRecordIcon />
-                </Icon>
-                <span>
-                    {column.Header}
-                </span>
-            </Label>
+            return <LinkRecordInputType data={inputData} label={column.Header} />
+
         case "select":
             return <Label>
                 <Icon fontSize="icon.sm" color="icon.opac">

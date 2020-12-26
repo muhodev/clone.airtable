@@ -1,8 +1,9 @@
 import React from 'react'
-import { Dialog, DialogBody, DialogBodyContainer, DialogClose, DialogHeader, InputGroup, Label, Overlay } from "./style"
+import { Dialog, DialogBody, DialogBodyContainer, DialogClose, DialogHeader, Overlay } from "./style"
 
 import { CloseIcon } from "@/components/Icons"
-import SwitchInputType from './SwitchInputType'
+import { Box } from "@/components"
+import SwitchInputType from './SwitchInputType/index'
 
 function DetailModal(props) {
     return (
@@ -18,11 +19,13 @@ function DetailModal(props) {
                         {
                             props.columns.map((column, index) => {
                                 return (
-                                    <SwitchInputType
-                                        key={index}
-                                        column={column}
-                                        data={props.data}
-                                    />
+                                    <Box pb={5}>
+                                        <SwitchInputType
+                                            key={index}
+                                            column={column}
+                                            data={props.data}
+                                        />
+                                    </Box>
                                 )
                             })
                         }

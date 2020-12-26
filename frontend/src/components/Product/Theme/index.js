@@ -1,5 +1,5 @@
 export default {
-    space: [0, 4, 8, 12, 16],
+    space: [0, 4, 8, 12, 16, 24, 32, 40],
     fontSizes: {
         body: {
             primary: 16,
