@@ -33,8 +33,20 @@ function TableProvider(props) {
 
   useEffect(() => {
     setColumns([
-      { id: "col1", name: "Title", type: "primary", options: null },
-      { id: "col2", name: "Deneme", type: "text", options: null },
+      {
+        id: "col1",
+        name: "Title",
+        type: "primary",
+        options: null,
+        width: "150px",
+      },
+      {
+        id: "col2",
+        name: "Deneme",
+        type: "text",
+        options: null,
+        width: "150px",
+      },
     ]);
   }, []);
 
