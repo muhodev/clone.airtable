@@ -1,0 +1,19 @@
+.Label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;  
+}
+
+.Label svg {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+}
+
+.Label span {
+    margin-left: 4px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    opacity: .5;
+}
